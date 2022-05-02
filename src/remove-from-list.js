@@ -31,20 +31,20 @@ class ListNode {
 
 function removeKFromList(l, k) {
 
-  while (l.value == k) {
+  while (1 && l.value == k) {
     l = l.next;
   }
   thisNode = l;
-  nextNode = thisNode.next;
-  while (nextNode !== null) {
-    if (nextNode.value === k) {
-      thisNode.next = nextNode.next;
+
+  while (thisNode.next !== null) {
+    if (thisNode.next.value === k) {
+      thisNode.next = thisNode.next.next;
+    }else{
+      thisNode = thisNode.next;
     }
     if (thisNode.next === null) {
       break
     }
-    thisNode = thisNode.next;
-    nextNode = thisNode.next;
   }
   return l;
 }
